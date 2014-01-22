@@ -3,14 +3,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <head>
 	<title>Stakaman.gr</title>
+	<script type="text/javascript">
+	function sendEmail(){
+		
+		var email = document.getElementByName('email').value;
+		var name = document.getElementByName('name').value;
+		var subject = document.getElementByName('subject').value;
+		var msg = document.getElementByName('message').value;
+		var url = "mailto:asimina@mycompany.com.gr?subject="+subject+"&body=Message from "+name+"\tMail:"+email+"\n\n"+msg;
+		window.location.href = url; 
+	}
+
+	</script>
 </head>
 <body style="font-family: 'Tahoma';background: #F2F2F2;">
 	<a href="index.html"><img src="Stakaman.jpg" alt="stakaman_logo"/></a>
-	<ul>
-		<li><a href="etairia.html">Η ΕΤΑΙΡΙΑ</a></li>
-		<li><a href="filoksenia.html">ΦΙΛΟΞΕΝΙΑ ΙΣΤΟΣΕΛΙΔΩΝ</a></li>
-		<li><a href="domain.html">ΟΝΟΜΑΤΑ ΧΩΡΟΥ</a></li>
-		<li><a href="epikoinonia.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+	<ul style="list-style:none;">
+		<li style="float: left;"><a href="etairia.html">Η ΕΤΑΙΡΙΑ</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+		<li style="float: left;"><a href="filoksenia.html">ΦΙΛΟΞΕΝΙΑ ΙΣΤΟΣΕΛΙΔΩΝ</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+		<li style="float: left;"><a href="domain.html">ΟΝΟΜΑΤΑ ΧΩΡΟΥ</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+		<li style="float: left;"><a href="epikoinonia.html">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+		<br>
 	</ul>
 	
 <div class="container">
@@ -26,15 +39,13 @@
 			<p><b>Αθήνα</b></p>
 			<p>Τηλ: 211 800 5012</p>
 			<br>
-<form method="post" action="" class="form-stacked center95">
-<input type="hidden" name="token" value="cfd4ed4ab4cc53823798caad2318adf0777d77ef">
 
     <fieldset class="control-group">
 
 	    <div class="row" style="margin-left:0">
             <div class="multicol">
                 <div class="control-group">
-        		    <label class="control-label bold" for="name">Όνομα</label>
+        		    <label class="control-label bold">Όνομα</label>
         			<div class="controls">
         			    <input class="input-xlarge" type="text" name="name" id="name" value="">
         			</div>
@@ -42,7 +53,7 @@
         	</div>
             <div class="multicol">
                 <div class="control-group">
-        		    <label class="control-label bold" for="email">Διεύθυνση Email</label>
+        		    <label class="control-label bold">Διεύθυνση Email</label>
         			<div class="controls">
         			    <input class="input-xlarge" type="text" name="email" id="email" value="">
         			</div>
@@ -52,7 +63,7 @@
 
         <div class="row" style="margin-left:0">
     	    <div class="control-group">
-    		    <label class="control-label bold" for="subject">Θέμα</label>
+    		    <label class="control-label bold" >Θέμα</label>
     			<div class="controls">
     			    <input class="input-xlarge" type="text" name="subject" id="subject" value="" style="width:80%;">
     			</div>
@@ -60,16 +71,14 @@
 		</div>
 
         <div class="control-group">
-		    <label class="control-label bold" for="message">Μήνυμα</label>
+		    <label class="control-label bold" >Μήνυμα</label>
 			<div class="controls">
 			    <textarea name="message" id="message" rows="12" class="fullwidth"></textarea>
 			</div>
 		</div>
 
-    </fieldset>
-
-
-    <p align="center"><input type="submit" value="Αποστολή Μηνύματος" class="btn btn-primary"></p>
+    </fieldset>	
+    <p align="center"><button onclick="sendEmail()">Αποστολή Μηνύματος</button></p>
 
 </form>
 
